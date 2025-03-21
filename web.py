@@ -4,16 +4,20 @@ import numpy as np
 from PIL import Image
 import os
 
-# Path to the model file (now tracked by Git LFS)
+# Path to the model file
 MODEL_PATH = "trained_plant_disease_model.keras"
 
-# Debug: Print current working directory
+# Debug: Print current working directory and file existence
 st.write(f"Current working directory: {os.getcwd()}")
+st.write(f"Model path: {os.path.abspath(MODEL_PATH)}")
+st.write(f"File exists: {os.path.exists(MODEL_PATH)}")
 
 # Load model
 try:
     model = tf.keras.models.load_model(MODEL_PATH, compile=False)
     st.write("Model loaded successfully!")
+    st.write("Model summary:")
+    model.summary(print_fn=st.write)  # Print model summary to Streamlit
 except Exception as e:
     st.error(f"Error loading model: {e}")
 
