@@ -1,11 +1,6 @@
-numpy
-pickle-mixin
 streamlit
-seaborn
-pandas
-scikit-learn
-tensorflow==2.12.0  
-keras
-opencv_python_headless
-ipykernel
-matplotlib
+tensorflow>=2.16.0  # Use a newer version of TensorFlow
+numpy
+Pillow
+scikit-learn>=1.0.0  # Use a newer version of scikit-learn
+opencv-python-headless
